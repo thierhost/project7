@@ -1,0 +1,1 @@
+rue,boulevard,bd,avenue,av,impasse,voie,chemin,place,artère,artere,promenade,allée,allee,cours
