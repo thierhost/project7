@@ -75,7 +75,7 @@ class wikipedia:
             self.Pageid = return_json_API["query"]["search"][0]["pageid"]
         except:
             self.Pageid = 'nada'
-        #regular expression to remove HTML tags we get back from wiki
+        #regular expression to remove HTML tags that we get back from wiki
         #not used snippet as it shows sentences truncated. wikiword below better
         try:
              self.wiki_word = re.sub('<[^>]+>','',return_json_API["query"]["search"][0]["snippet"])
