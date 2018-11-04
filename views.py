@@ -4,13 +4,16 @@
 from flask import Flask,request,url_for, redirect, render_template, abort
 import module
 import json
+import logging as lg
+
+#lg.basicConfig(level=lg.DEBUG)
 
 app = Flask(__name__)
 
 
 
 
-@app.route('/message', methods=['GET', 'POST'])
+@app.route('/GrandPy', methods=['GET', 'POST'])
 
 def message():
     if request.method == 'POST':
@@ -27,6 +30,7 @@ def message():
         print(url_google)
         url_wiki = question.wiki()
         print(url_wiki)
+        #lg.warning(url_wiki)
         wikiblabla = module.wikipedia(url_wiki)
         print(wikiblabla.Pageid)
 
@@ -38,9 +42,9 @@ def message():
 
 
 
-@app.route('/ajax')
+@app.route('/')
 def ajax():
-    return render_template('accueil_AJAX.html', titre="Bienvenue chez GrandPy !")
+    return render_template('accueil.html', titre="Bienvenue chez GrandPy !")
 
 
 
@@ -77,29 +81,6 @@ def urlfor():
 def redirection_google():
     #abort(401) display error page (ici non autorise)
     return redirect('http://www.google.fr')
-
-
-@app.route('/message2')
-def message2():
-    if request.method == 'POST':
-
-        msg = request.form['msg']#get msg from the POST
-
-        question = module.parsing(msg)
-
-        print("la quest est : " + msg)
-
-        url_google = question.google()
-        print(url_google)
-        url_wiki = question.wiki()
-        print(url_wiki)
-        wikiblabla = module.wikipedia(url_wiki)
-
-
-
-        return render_template('accueil.html', titre="Bienvenue chez GrandPy !", url_google=url_google)
-
-    return render_template('accueil.html', titre="Bienvenue chez GrandPy !")
 
 
 
