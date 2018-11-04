@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+    <head>
+        <meta charset="utf-8" />
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css" />
+        <title>{{ titre }}</title>
+
+    </head>
+
+    <body>
+
+        <header id = "conteneur_header">
+            <img src="static/images/GP2.png" alt="Photo de montagne" id = "image_header" />
+            <aside id = "aside_header" >
+            Bienvenu sur Papy bot <br/>
+            Le grand pere qui repond a vos question !
+            </aside>
+
+        </header>
+
+        <section id = "conteneur">
+
+            <p>
+                <textarea class = "element" name="dialogue" id="dialogue" rows="15" cols="70">
+
+                </textarea>
+
+            </p>
+
+
+            <form  method="post" action=""><p>
+            <label for="msg"> Rentrer l'adresse que vous voulez chercher puis appyer sur Entree </label><br />
+
+                <textarea class = "element" name="msg" id="msg" rows="3" cols="50">
+
+                </textarea>
+            </form>
+
+
+
+
+            <div class = "element" id="google"> <div id="plan"></div> </div>
+
+        </section>
+
+        <footer id = "conteneur_footer">
+        footer
+        </footer>
+
+        <script src="../static/script.js"></script>
+    </body>
+
+
+</html>
