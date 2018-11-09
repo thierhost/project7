@@ -1,1 +1,2 @@
-web: gunicorn views:app
+web: python views.py
+heroku ps:scale web=1
