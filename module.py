@@ -1,15 +1,17 @@
 import requests
 import re
+import os.path
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 class parsing():
     """parsing the sentence from user to be able to query googlemap and wiki
     """
 
-    with open('.\static\localisation.txt', 'r') as file:
+    with open(os.path.join(BASE_DIR, 'static\localisation.txt'), 'r') as file:
         texte = file.read()
         LOCALISATION = texte.split(',')
 
-    with open('.\static\stopwords.txt', 'r') as file:
+    with open(os.path.join(BASE_DIR, 'static\stopwords.txt'), 'r') as file:
         texte = file.read()
         STOPWORDS = texte.split(',')
 
