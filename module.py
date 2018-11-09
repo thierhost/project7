@@ -5,11 +5,11 @@ class parsing():
     """parsing the sentence from user to be able to query googlemap and wiki
     """
 
-    with open('static\localisation.txt', 'r') as file:
+    with open('.\static\localisation.txt', 'r') as file:
         texte = file.read()
         LOCALISATION = texte.split(',')
 
-    with open('static\stopwords.txt', 'r') as file:
+    with open('.\static\stopwords.txt', 'r') as file:
         texte = file.read()
         STOPWORDS = texte.split(',')
 
