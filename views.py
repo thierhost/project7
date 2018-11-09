@@ -5,6 +5,7 @@ from flask import Flask,request,url_for, redirect, render_template, abort
 import module
 import json
 import logging as lg
+import os
 
 #lg.basicConfig(level=lg.DEBUG)
 
@@ -85,4 +86,5 @@ def redirection_google():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))
+	app.run(host='0.0.0.0', port=port)
