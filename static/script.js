@@ -19,7 +19,7 @@ function enter_address() {
 
     var xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "https://manu-oc.herokuapp.com/GrandPy", true);
+    xhr.open("POST", "/GrandPy", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //replace below to remove /n from textarea
     entry_user = document.getElementById("msg").value.replace(/\n/g, "")
